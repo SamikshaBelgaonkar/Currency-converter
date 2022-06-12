@@ -4,22 +4,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "Currency")
 public class Currency {
 
 	@Id
 	private String name;
-	@Column(name = "valueInUsd",nullable =false)
-	private double valueInUsd;
-	
-	public Currency() {}
+	@Column(name = "valueInEuros", nullable = false)
+	private double valueInEuros;
 
-	public Currency(String name, double valueInUsd) {
+	public Currency() {
+	}
+
+	public Currency(String name, double valueInEuros) {
 		super();
 		this.name = name;
-		this.valueInUsd = valueInUsd;
+		this.valueInEuros = valueInEuros;
 	}
 
 	public String getName() {
@@ -30,17 +30,17 @@ public class Currency {
 		this.name = name;
 	}
 
-	public double getValueInUsd() {
-		return valueInUsd;
+	public double getValueInEuros() {
+		return valueInEuros;
 	}
 
-	public void setValueInUsd(double valueInUsd) {
-		this.valueInUsd = valueInUsd;
+	public void setValueInEuros(double valueInUsd) {
+		this.valueInEuros = valueInUsd;
 	}
 
 	@Override
 	public String toString() {
-		return "Currency [name=" + name + ", valueInUsd=" + valueInUsd + "]";
+		return "Currency [name=" + name + ", valueInEuros=" + valueInEuros + "]";
 	}
 	
 }
